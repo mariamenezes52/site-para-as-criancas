@@ -1,0 +1,320 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS - ESTILO NEON ESPACIAL
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --fundo-escuro: #070B14; /* Azul bem profundo, quase preto */
+    --ciano-neon: #00F3FF;
+    --roxo-neon: #B026FF;
+    --rosa-neon: #FF007F;
+    --verde-neon: #00FF88;
+    --texto-claro: #E2E8F0;
+    --vidro: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--fundo-escuro);
+    /* Fundo com grade sutil de arcade espacial */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    color: var(--texto-claro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--ciano-neon);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    /* Efeito de brilho neon */
+    text-shadow: 0 0 10px var(--ciano-neon), 0 0 20px var(--ciano-neon), 0 0 40px var(--roxo-neon);
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--roxo-neon);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--roxo-neon);
+}
+
+/* ==========================================
+   MAIN LARGO (SEM CAIXA)
+   ========================================== */
+main {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.tela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.escondida {
+    display: none !important;
+}
+
+/* Ícones (Substituindo as imagens) */
+.icone-grande {
+    font-size: 5rem;
+    filter: drop-shadow(0 0 15px var(--ciano-neon));
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ==========================================
+   ÁREA DA PERGUNTA - EFEITO VIDRO
+   ========================================== */
+.area-pergunta {
+    background: var(--vidro);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+}
+
+.icone-pergunta {
+    font-size: 2.5rem;
+}
+
+#texto-pergunta {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--texto-claro);
+}
+
+/* ==========================================
+   BOTÕES ESTILO ARCADE
+   ========================================== */
+.opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-principal {
+    background: transparent;
+    color: var(--verde-neon);
+    font-weight: 800;
+    border: 2px solid var(--verde-neon);
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+    margin-top: 15px;
+}
+
+.btn-principal:hover {
+    background: var(--verde-neon);
+    color: var(--fundo-escuro);
+    box-shadow: 0 0 30px var(--verde-neon);
+    transform: scale(1.05);
+}
+
+.btn-opcao {
+    background: var(--vidro);
+    color: var(--texto-claro);
+    border: 2px solid var(--roxo-neon);
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+}
+
+.btn-opcao:hover {
+    background: rgba(176, 38, 255, 0.2);
+    border-color: var(--ciano-neon);
+    box-shadow: 0 0 20px var(--ciano-neon);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   PLACAR E BARRA DE PROGRESSO
+   ========================================== */
+.cabecalho-quiz {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--vidro);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.placar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.placar span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #94A3B8;
+}
+
+.placar strong {
+    font-size: 1.5rem;
+    color: var(--ciano-neon);
+    text-shadow: 0 0 10px var(--ciano-neon);
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 12px;
+    background: #1E293B;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#progresso {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--roxo-neon), var(--ciano-neon));
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 0 0 15px var(--ciano-neon);
+}
+
+/* ==========================================
+   FEEDBACK E ANIMAÇÕES
+   ========================================== */
+.correto {
+    background: rgba(0, 255, 136, 0.2) !important;
+    border-color: var(--verde-neon) !important;
+    color: var(--verde-neon) !important;
+    box-shadow: 0 0 30px var(--verde-neon) !important;
+    animation: pop 0.4s ease;
+}
+
+.errado {
+    background: rgba(255, 0, 127, 0.2) !important;
+    border-color: var(--rosa-neon) !important;
+    color: var(--rosa-neon) !important;
+    box-shadow: 0 0 30px var(--rosa-neon) !important;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-15px); }
+    40% { transform: translateX(15px); }
+    60% { transform: translateX(-15px); }
+    80% { transform: translateX(15px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.shake .area-pergunta {
+    border-color: var(--rosa-neon) !important;
+    box-shadow: 0 0 40px var(--rosa-neon) !important;
+}
+
+footer {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin-top: 20px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (CELULARES)
+   ========================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .icone-grande {
+        font-size: 3.5rem;
+    }
+
+    #texto-pergunta {
+        font-size: 1.2rem;
+    }
+
+    .opcoes {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .btn-opcao {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .cabecalho-quiz {
+        padding: 10px 15px;
+    }
+
+    .placar strong {
+        font-size: 1.2rem;
+    }
+}

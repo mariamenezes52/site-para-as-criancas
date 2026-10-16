@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Matemática Espacial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MISSÃO ESPACIAL</h1>
+        <p>Academia de Cadetes • 6º Ano</p>
+    </header>
+
+    <main>
+        <!-- TELA 1: INÍCIO -->
+        <section id="tela-inicio" class="tela ativa">
+            <div class="icone-grande">🚀</div>
+            <h2>Prepare-se para a Decolagem</h2>
+            <p>Sua nave está com pouco combustível e você precisa resolver cálculos para completar a missão e voltar para casa.</p>
+            <p class="aviso">Você tem 3 vidas (escudos de energia). Boa sorte, cadete!</p>
+            <button id="btn-iniciar" class="btn-principal">Iniciar Missão</button>
+        </section>
+
+        <!-- TELA 2: QUIZ -->
+        <section id="tela-quiz" class="tela escondida">
+            <div class="cabecalho-quiz">
+                <div class="placar">
+                    <span>PONTOS</span>
+                    <strong id="pontuacao">0</strong>
+                </div>
+                <div class="placar">
+                    <span>ESCUDOS</span>
+                    <strong id="vidas">❤️❤️❤️</strong>
+                </div>
+            </div>
+            
+            <div class="barra-progresso">
+                <div id="progresso"></div>
+            </div>
+
+            <div class="area-pergunta">
+                <div class="icone-pergunta">👨‍🚀</div>
+                <h3 id="texto-pergunta">Carregando pergunta...</h3>
+            </div>
+
+            <div id="opcoes-resposta" class="opcoes">
+                <!-- As opções serão inseridas pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- TELA 3: FIM DE JOGO -->
+        <section id="tela-fim" class="tela escondida">
+            <div id="icone-fim" class="icone-grande">🏆</div>
+            <h2 id="titulo-fim">Fim de Jogo!</h2>
+            <p id="mensagem-fim">Você fez 0 pontos.</p>
+            <button id="btn-reiniciar" class="btn-principal">Jogar Novamente</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto Educativo - 6º Ano do Ensino Fundamental</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
